@@ -1,0 +1,86 @@
+
+
+.card {
+  position: relative;
+  width: 150px;
+  height: 225px;
+  background: url(../img/cardback.gif) top left repeat;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.front {
+  background: #fff;
+  padding: 1px 3px;
+  color: #000000;
+/*   position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px; */
+}
+
+.hearts, .diamonds { color: #890000; }
+/* .spades, .clubs { color: #000; } */
+
+.card-topleft {
+  position: absolute;
+  top: 0.3em;
+  left: 0.5em;
+}
+
+
+.card-bottomright {
+  position: absolute;
+  bottom: 0.3em;
+  right: 0.5em;
+  transform: rotate(180deg);
+}
+
+.card-corner-rank, 
+.card-corner-suit {
+  font-size: 0.9em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.card-suits {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 2rem;
+}
+
+.ace{
+  justify-content: center;
+
+}
+
+.card-suit {
+  display: flex;
+  justify-content: center;
+}
+
+.card-suit img{
+  width: 85%;
+  height: auto;
+}
+
+.ordered {
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+
+}
+.ordered .card-suit{
+  flex-basis: 50%;
+}
+
+.ordered .card-suit.centered{
+  flex-basis: 100%;
+}
+
