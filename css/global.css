@@ -12,7 +12,6 @@ html {
     color: #333;
     background: #eee;
     height: 100%;
-    /* overflow-x: hidden; */
   }
   
   .wrapper {
@@ -22,6 +21,7 @@ html {
     flex-direction: column;
     max-width: 1280px;
     margin: 0 auto;
+
   }
   
   .container-fluid {
@@ -29,6 +29,8 @@ html {
     margin-left: auto;
     padding-right: 2rem;
     padding-left: 2rem;
+    width: 100%;
+
   }
   
   header {
@@ -38,12 +40,9 @@ html {
     padding-bottom: 25px;
   }
   
-  main {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
+/*   main {
+
+  } */
 
   footer {
     flex-shrink: 0;
