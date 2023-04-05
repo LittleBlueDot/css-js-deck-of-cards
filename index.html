@@ -8,87 +8,93 @@
     <title>War Game</title>
     <link rel="stylesheet" type="text/css" href="/css/reset.css" media="all" />
     <link rel="stylesheet" type="text/css" href="/css/global.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="/css/main.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/css/cards.css" media="all" />
     <link rel="stylesheet" type="text/css" href="/css/gamescene.css" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- For sticky footer -->
         <header class="container-fluid">
             <h1>--- Welcome to the battle! ---</h1>
         </header>
 
         <main class="container-fluid">
+            <div class="game-scene">
             <div class="player">
                 <h2>Player 1</h2>
                 <p>Score: <span id="player1Score">here Player 1 score will be</span></p>
             </div>
             <div class="player-deck">
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
-                </div>            
+                <div class="card deck-back">
+                </div>
             </div>
             <div class="player-card-slot card-slot">
-            <div class="card">♦</div>
-                            <!--ace-->
-                            <!-- <div class="card hearts">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <div class="card-topleft">
-                                            <div class="card-corner-rank">A</div>
-                                            <div class="card-corner-suit">♥</div>
-                                        </div>
-                                        <div class="card-suits ace">
-                                            <div class="card-suit">♥</div>
-                                        </div>
-                                        <div class="card-bottomright">
-                                            <div class="card-corner-rank">A</div>
-                                            <div class="card-corner-suit">♥</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                <!-- <div class="card">♦</div> -->
+                <!--ace / card without flip: removed div wrapper card-inner and card-back from the original cards.html - we need to see if the cards will be with a flip or not-->
+                <div class="card hearts">
+                    <div class="card-front">
+                        <div class="card-topleft">
+                            <div class="card-corner-rank">A</div>
+                            <div class="card-corner-suit">♥</div>
+                        </div>
+                        <div class="card-suits ace">
+                            <div class="card-suit">♥</div>
+                        </div>
+                        <div class="card-bottomright">
+                            <div class="card-corner-rank">A</div>
+                            <div class="card-corner-suit">♥</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="text"><p>Text loose or win the round: Player 1 or Player 2</p></div>
+            <div class="text">
+                <p>Text loose or win the round: Player 1 or Player 2</p>
+            </div>
             <div class="player">
                 <h2>Player 2</h2>
                 <p>Score: <span id="player2Score">here Player 2 score will be</span></p>
             </div>
             <div class="player-deck">
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
+                <div class="card deck-back">
                 </div>
-                <div class="card deck-back">                   
-                </div>            
+                <div class="card deck-back">
+                </div>
             </div>
             <div class="player-card-slot card-slot">
-            <div class="card">♦</div>
+                <div class="card">♦</div>
             </div>
-    </main>
+        </div>
+        </main>
 
-    <footer class="container-fluid">
-        
-    </footer>
-    </div>
+        <footer class="container-fluid">
+            <div class="row">
+                <ul>
+                    <li>©</li>
+                    <li><a href="https://github.com/filbrandao" target="_blank">Filipe Brandão</a></li>
+                    <li><a href="https://github.com/nunogmesquita" target="_blank">Nuno Mesquita</a></li>
+                    <li><a href="https://github.com/LittleBlueDot" target="_blank">Lina Balciunaite</a></li>
+                </ul>
+            </div>
+        </footer>
 </body>
 
 </html>
