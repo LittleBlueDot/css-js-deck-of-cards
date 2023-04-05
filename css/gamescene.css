@@ -2,6 +2,8 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 150px);
   grid-template-rows: 70px 290px 80px 70px 290px;
+  /* grid-template-rows: min-content auto min-content min-content auto; */
+
   gap: 5px 30px;
   /*cursor: pointer;*/ /* Evaluate if we need pointer everywhere */
   justify-content: center;
@@ -17,11 +19,12 @@ main {
 .player p {
   margin: 10px 0;
   font-weight: 600;
-  color: #574F4E;
+  color: #574f4e;
 }
 
-#player1Score, #player2Score{
-    font-weight: 400;
+#player1Score,
+#player2Score {
+  font-weight: 400;
 }
 
 .text {
@@ -32,44 +35,36 @@ main {
 }
 
 .text p {
-    color: #66806D;
-    font-weight: 600;
-    padding: 10px 0;
-    border-top: 1px solid #D4D4D4;
-    border-bottom: 1px solid #D4D4D4;
-
-    
-
+  color: #66806d;
+  font-weight: 600;
+  padding: 10px 0;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
 }
 
 .player-deck {
-    position: relative;
+  position: relative;
 }
 
 .deck-back {
   background: url(../img/cardback.gif) top left repeat;
-  
 }
 
-.deck-back:nth-child(n+2){
-    position: absolute;
-    top:20px;
-    
+.deck-back:nth-child(n + 2) {
+  position: absolute;
+  top: 20px;
 }
 
+.deck-back:nth-child(3) {
+  top: 30px;
+}
+.deck-back:nth-child(4) {
+  top: 40px;
+}
 
-.deck-back:nth-child(3){
-    top: 30px;
+.deck-back:nth-child(5) {
+  top: 50px;
 }
-.deck-back:nth-child(4){
-    top: 40px;
-}
-.deck-back:nth-child(3){
-    top: 50px;
-}
-.deck-back:nth-child(5){
-    top: 60px;
-}
-.deck-back:nth-child(6){
-    top: 70px;
+.deck-back:nth-child(6) {
+  top: 60px;
 }
