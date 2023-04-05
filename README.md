@@ -1,8 +1,10 @@
-# Project Title
+# War Game
 
 ## About 
 
-Write about 1-2 paragraphs describing the purpose of your project.
+A game of cards War Game created in HTML, CSS (practising flexbox, grid), JavaScript. The rules of the game you can watch [here](https://www.youtube.com/watch?v=iEPK5fppX8w).
+
+This exercise is made in **[MindSwap Bootcamp](https://mindswap.academy/)** by **[Filipe Brandão](https://github.com/filbrandao)**, **[Nuno Mesquita](https://github.com/nunogmesquita)** and **[Lina Balciunaite](https://github.com/LittleBlueDot).
 
 
 
