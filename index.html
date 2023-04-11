@@ -19,82 +19,123 @@
 </head>
 
 <body>
-        <header class="container-fluid">
-            <h1>--- Welcome to the battle! ---</h1>
-        </header>
+    <header class="container-fluid">
+        <h1>--- Welcome to the battle! ---</h1>
+    </header>
 
-        <main class="container-fluid">
-            <div class="game-scene">
-            <div class="player">
-                <h2>Player 1</h2>
-                <p>Score: <span id="player1Score">here Player 1 score will be</span></p>
-            </div>
-            <div class="player-deck">
-                <div class="card deck-back">
-                </div>
-                <div class="card deck-back">
-                </div>
-                <div class="card deck-back">
-                </div>
-                <div class="card deck-back">
-                </div>
-                <div class="card deck-back">
-                </div>
-            </div>
-            <div class="player-card-slot card-slot">
-                <!-- <div class="card">♦</div> -->
-                <!--ace / card without flip: removed div wrapper card-inner and card-back from the original cards.html - we need to see if the cards will be with a flip or not-->
-                <div class="card hearts">
-                    <div class="card-front">
-                        <div class="card-topleft">
-                            <div class="card-corner-rank">A</div>
-                            <div class="card-corner-suit">♥</div>
+    <main class="container-fluid">
+        <div class="game-scene">
+            <div class="btn-container"><button type="button" id="startBtn">Start!</button></div>
+            <div class="players-container">
+                <div class="one-player">
+                    <div class="player">
+                        <h2>Player 1</h2>
+                        <p>Score: <span id="player1Score">here Player 1 score will be</span></p>
+                    </div>
+                    <div class="player-deck">
+                        <div class="card deck-back">
                         </div>
-                        <div class="card-suits ace">
-                            <div class="card-suit">♥</div>
+                        <div class="card deck-back">
                         </div>
-                        <div class="card-bottomright">
-                            <div class="card-corner-rank">A</div>
-                            <div class="card-corner-suit">♥</div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+
+                    </div>
+                    <div class="player-card-slot card-slot">
+                        <!-- <div class="card">♦</div> -->
+                        <!--ace / card without flip: removed div wrapper card-inner and card-back from the original cards.html - we need to see if the cards will be with a flip or not-->
+                        <div class="card hearts">
+                            <div class="card-front">
+                                <div class="card-topleft">
+                                    <div class="card-corner-rank">A</div>
+                                    <div class="card-corner-suit">♥</div>
+                                </div>
+                                <div class="card-suits ace">
+                                    <div class="card-suit">♥</div>
+                                </div>
+                                <div class="card-bottomright">
+                                    <div class="card-corner-rank">A</div>
+                                    <div class="card-corner-suit">♥</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="text">
-                <p>Text loose or win the round: Player 1 or Player 2</p>
-            </div>
-            <div class="player">
-                <h2>Player 2</h2>
-                <p>Score: <span id="player2Score">here Player 2 score will be</span></p>
-            </div>
-            <div class="player-deck">
-                <div class="card deck-back">
+
+                <div class="text">
+                    <p>Text loose or win the round: Player 1 or Player 2</p>
                 </div>
-                <div class="card deck-back">
+                <div class="one-player">
+                    <div class="player">
+                        <h2>Player 2</h2>
+                        <p>Score: <span id="player2Score">here Player 2 score will be</span></p>
+                    </div>
+                    <div class="player-deck">
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                        <div class="card deck-back">
+                        </div>
+                    </div>
+                    <div class="player-card-slot card-slot">
+                        <div class="card">♦</div>
+                    </div>
                 </div>
-                <div class="card deck-back">
-                </div>
-                <div class="card deck-back">
-                </div>
-                <div class="card deck-back">
-                </div>
-            </div>
-            <div class="player-card-slot card-slot">
-                <div class="card">♦</div>
             </div>
         </div>
-        </main>
+    </main>
 
-        <footer class="container-fluid">
-            <div class="row">
-                <ul>
-                    <li>©</li>
-                    <li><a href="https://github.com/filbrandao" target="_blank">Filipe Brandão</a></li>
-                    <li><a href="https://github.com/nunogmesquita" target="_blank">Nuno Mesquita</a></li>
-                    <li><a href="https://github.com/LittleBlueDot" target="_blank">Lina Balciunaite</a></li>
-                </ul>
-            </div>
-        </footer>
+    <footer class="container-fluid">
+        <div class="row">
+            <ul>
+                <li>©</li>
+                <li><a href="https://github.com/filbrandao" target="_blank">Filipe Brandão</a></li>
+                <li><a href="https://github.com/nunogmesquita" target="_blank">Nuno Mesquita</a></li>
+                <li><a href="https://github.com/LittleBlueDot" target="_blank">Lina Balciunaite</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>
