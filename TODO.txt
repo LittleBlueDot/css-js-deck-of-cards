@@ -1,0 +1,8 @@
+1. Renderizar div com a playerCard -> LINA;
+2. Criar página inicial (simples);
+    2.1 Criar botões de início de jogo;
+3. Criar botão drawCards;
+4. Criar animação para deslizar carta do deck para o jogo;
+5. Criar animação de guerra (só fazer revelar última carta do array);
+6. Criar animação de end game;
+7. Criar botão de restart;
