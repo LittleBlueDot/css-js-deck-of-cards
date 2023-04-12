@@ -1,0 +1,83 @@
+h1 {
+  text-align: center;
+}
+
+.cards-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card {
+  position: relative;
+  width: 150px;
+  height: 225px;
+  background-color: transparent;
+  perspective: 1000px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border: 1px solid #d4d4d4;
+}
+
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.card-back {
+  background: url(../img/cardback.gif) top left repeat;
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  padding: 1px 3px;
+  background: #fff;
+}
+
+
+.hearts,
+.diamonds {
+  color: #e92327;
+}
+
+.card-topleft {
+  position: absolute;
+  top: 0.3em;
+  left: 0.5em;
+}
+
+.card-bottomright {
+  position: absolute;
+  bottom: 0.3em;
+  right: 0.5em;
+  transform: rotate(180deg);
+}
+
+.card-corner-rank,
+.card-corner-suit {
+  font-size: 0.9em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.card-suits {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-suits img{
+    width: 80%;
+    height: auto;
+    align-self: center;
+}

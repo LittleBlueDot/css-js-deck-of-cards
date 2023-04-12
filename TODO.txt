@@ -1,0 +1,5 @@
+Criar página inicial (simples);
+Criar animação para deslizar carta do deck para o jogo (opcional);
+Parar quando há guerra e obrigar a clicar novamente em "drawCards" para resolver a guerra;
+Criar animação de guerra (só fazer revelar última carta do array);
+Quando há um vencedor, substituir o "drawCards" por "restart";

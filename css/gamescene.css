@@ -1,0 +1,71 @@
+.game-scene {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: 70px 290px 80px 70px 290px;
+  /* grid-template-rows: min-content auto min-content min-content auto; */
+  gap: 5px 30px;
+  /*cursor: pointer;*/ /* Evaluate if we need pointer everywhere */
+  justify-content: center;
+}
+
+.player {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.player p {
+  margin: 10px 0;
+  font-weight: 600;
+  color: #574f4e;
+}
+
+#player1Score,
+#player2Score {
+  font-weight: 400;
+}
+
+.text {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text p {
+  color: #66806d;
+  font-weight: 600;
+  padding: 10px 0;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.player-deck {
+  position: relative;
+}
+
+.deck-back {
+  background: url(../img/cardback.gif) top left repeat;
+}
+
+.deck-back:nth-child(n + 2) {
+  position: absolute;
+  top: 20px;
+}
+
+.deck-back:nth-child(3) {
+  top: 30px;
+}
+.deck-back:nth-child(4) {
+  top: 40px;
+}
+
+.deck-back:nth-child(5) {
+  top: 50px;
+}
+.deck-back:nth-child(6) {
+  top: 60px;
+}
