@@ -1,75 +1,20 @@
 .game-scene {
   max-width: 1280px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-}
-
-.btn-container {
-  margin-bottom: 30px;
-}
-
-.btn-container button {
-  background-color: #0e5a8a;
-  border: 1px solid #0b4b73;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.2rem;
-  padding: 7px 15px;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.btn-container button:hover,
-.btn-container button:focus {
-  background-color: #66806d;
-  border: 1px solid #576e5d;
-}
-
-.players-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: 70px 290px 80px 70px 290px;
+  /* grid-template-rows: min-content auto min-content min-content auto; */
+  gap: 5px 30px;
+  /*cursor: pointer;*/ /* Evaluate if we need pointer everywhere */
   justify-content: center;
-}
-
-@media all and (min-width: 1280px) {
-  .players-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0 20px;
-  }
-}
-
-.one-player {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: center;
-  min-height: 450px;
-  gap: 0px 30px;
-}
-
-@media all and (min-width: 600px) {
-  .one-player {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    min-height: 350px;
-  }
 }
 
 .player {
-  flex-basis: 100%;
+  grid-column: span 2;
   display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-@media all and (min-width: 600px) {
-  .player {
-    align-items: flex-start;
-  }
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .player p {
@@ -78,19 +23,13 @@
   color: #574f4e;
 }
 
-@media all and (max-width: 450px) {
-  .player-deck,
-  .player-card-slot {
-    width: calc(50% - 15px);
-  }
-}
-
 #player1Score,
 #player2Score {
   font-weight: 400;
 }
 
 .text {
+  grid-column: span 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,19 +39,8 @@
   color: #66806d;
   font-weight: 600;
   padding: 10px 0;
-  margin: 20px 0;
   border-top: 1px solid #d4d4d4;
   border-bottom: 1px solid #d4d4d4;
-  text-align: center;
-}
-
-@media all and (min-width: 1280px) {
-  .text {
-    align-items: flex-start;
-  }
-  .text p {
-    margin: 50px 25px;
-  }
 }
 
 .player-deck {
@@ -125,49 +53,19 @@
 
 .deck-back:nth-child(n + 2) {
   position: absolute;
-  top: 10px;
-}
-
-.deck-back:nth-child(3) {
   top: 20px;
 }
 
-.deck-back:nth-child(4) {
+.deck-back:nth-child(3) {
   top: 30px;
 }
-
-.deck-back:nth-child(5) {
+.deck-back:nth-child(4) {
   top: 40px;
 }
 
-.deck-back:nth-child(6) {
+.deck-back:nth-child(5) {
   top: 50px;
 }
-
-.deck-back:nth-child(7) {
+.deck-back:nth-child(6) {
   top: 60px;
-}
-
-.deck-back:nth-child(8) {
-  top: 70px;
-}
-
-.deck-back:nth-child(9) {
-  top: 80px;
-}
-
-.deck-back:nth-child(10) {
-  top: 90px;
-}
-
-.deck-back:nth-child(11) {
-  top: 100px;
-}
-
-.deck-back:nth-child(12) {
-  top: 110px;
-}
-
-.deck-back:nth-child(13) {
-  top: 120px;
 }
