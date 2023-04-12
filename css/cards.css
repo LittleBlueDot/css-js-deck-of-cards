@@ -20,54 +20,32 @@ h1 {
   perspective: 1000px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  border: 1px solid #D4D4D4;
-}
-.card-inner{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  cursor: pointer;
+  border: 1px solid #d4d4d4;
 }
 
-.card:hover .card-inner,
-.card:focus .card-inner {
-  transform: rotateY(180deg);
 
-}
-
-.card-front, .card-back {
-  position: absolute;
+.card-front,
+.card-back {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
-.card-back{
+.card-back {
   background: url(../img/cardback.gif) top left repeat;
   transform: rotateY(180deg);
-
 }
 
-.card-front{
+.card-front {
   padding: 1px 3px;
   background: #fff;
 }
 
-.front {
-  background: #fff;
-  padding: 1px 3px;
-  color: #000000;
-}
 
 .hearts,
 .diamonds {
-  color: #890000;
+  color: #e92327;
 }
-/* .spades, .clubs { color: #000; } */
 
 .card-topleft {
   position: absolute;
@@ -94,68 +72,12 @@ h1 {
   height: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 2rem;
 }
 
-.ace {
-  justify-content: center;
+.card-suits img{
+    width: 80%;
+    height: auto;
+    align-self: center;
 }
-
-.card-suit {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.card-suit img {
-  width: 85%;
-  height: auto;
-}
-
-.ordered {
-  flex-flow: row;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-.ordered .card-suit {
-  flex-basis: 50%;
-}
-
-.ordered .card-suit.centered {
-  flex-basis: 100%;
-}
-
-.absoluteSymbol{
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.absoluteSymbol.ten{
-  top: 40px;
-}
-
-.absoluteSymbolBottom{
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.absoluteSymbolBottom.ten{
-  bottom: 40px;
-}
-
-.absoluteSymbolCentered{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
