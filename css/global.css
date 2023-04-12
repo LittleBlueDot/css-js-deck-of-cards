@@ -10,7 +10,8 @@ body {
   word-wrap: break-word;
   -webkit-text-size-adjust: 100%;
   color: #333;
-  background: #eee;
+  background: url(../img/backgroundNew.jpg) no-repeat center center fixed;
+  background-size: cover;
   /* For sticky footer */
   display: flex;
   flex-direction: column;
@@ -24,8 +25,12 @@ header, footer {
 }
 
 header {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 /* For sticky footer */
@@ -73,7 +78,7 @@ h6 {
   width: 100%;
 }
 
-footer {
+/* footer {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 60px;
@@ -102,4 +107,4 @@ footer a:hover,
 footer a:focus {
   text-decoration: none;
   opacity: 0.8;
-}
+} */
