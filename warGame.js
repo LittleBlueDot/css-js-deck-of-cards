@@ -10,10 +10,26 @@ function startGame() {
   document.querySelector(".game-scene").style.display = "flex"; // LBA added to show game scene
   gameHeader.classList.toggle("fade"); // LBA
   document.querySelector(".start-game").style.display = "none"; // LBA
+  document.querySelector(".restart").style.display = "none"; // LBA
+
+  //TODO: see if possible to combine multiple classes, the code bellow doesn´t work
+/*   const hideButtons = document.querySelectorAll(".start-game, .restart");
+  hideButtons.style.display = "none"; */
   createDeck();
   shuffleDeck();
   splitDecks();
 }
+
+// LBA
+function restartGame() {
+  document.querySelector(".restart").style.display = "none"; // LBA
+  document.querySelector(".play").style.display = "block"; // LBA
+  document.querySelector(".text").style.display = "none"; // LBA
+  createDeck();
+  shuffleDeck();
+  splitDecks();
+}
+
 
 function createDeck() {
   for (let i = 0; i < suits.length; i++) {
@@ -78,8 +94,12 @@ function endGame() {
   p2score();
   if (player2Deck.length === 0) {
     document.getElementById("winner").innerHTML = "Player 1 wins";
+    document.querySelector(".play").style.display = "none"; // LBA
+    document.querySelector(".restart").style.display = "block"; // LBA
   } else if (player1Deck.length === 0) {
     document.getElementById("winner").innerHTML = "Player 2 wins";
+    document.querySelector(".play").style.display = "none"; // LBA
+    document.querySelector(".restart").style.display = "block"; // LBA
   }
 }
 

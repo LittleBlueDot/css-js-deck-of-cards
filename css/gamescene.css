@@ -119,8 +119,19 @@ h1 {
   z-index: 2;
 }
 
+.btn-container.restart button {
+  background-color: #333;
+  border: 1px solid #262626;
+}
+
 .btn-container button:hover,
 .btn-container button:focus {
+  background-color: #0b4b73;
+  border: 1px solid #083551;
+}
+
+.btn-container.restart button:hover,
+.btn-container.restart button:focus {
   background-color: #0b4b73;
   border: 1px solid #083551;
 }
@@ -147,8 +158,10 @@ h1 {
 .text p {
   color: #66806d;
   font-weight: 600;
+  text-transform: uppercase;
+  font-size: 2rem;
   padding: 10px 0;
-  margin: 20px 0;
+  margin: 0 0 30px;
   border-top: 1px solid #d4d4d4;
   border-bottom: 1px solid #d4d4d4;
   text-align: center;
