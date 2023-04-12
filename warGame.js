@@ -65,10 +65,10 @@ function drawCards() {
 }
 
 function result() {
-  if (player1Card[-1].power === player2Card[-1].power) {
+  if (player1Card.at(-1).power === player2Card.at(-1).power) {
     war();
     return;
-  } player1Card[-1].power > player2Card[-1].power ? player1Deck.push(player2Card, player1Card) : player2Deck.push(player1Card, player2Card);
+  } player1Card.at(-1).power > player2Card.at(-1).power ? player1Deck.push(player2Card, player1Card) : player2Deck.push(player1Card, player2Card);
 }
 
 function war() {
