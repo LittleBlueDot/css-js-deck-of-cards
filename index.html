@@ -26,7 +26,6 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript" src="warGame.js"></script>
   </head>
 
   <body>
@@ -35,9 +34,12 @@
     </header>
 
     <main class="container-fluid">
-      <div class="game-scene">
         <button onclick="startGame()">NEW GAME</button>
+      <div class="game-scene">
+        
+        <div class="btn-container"><button onclick="play()">Draw Cards</button></div>
         <div class="players-container">
+            
           <div class="one-player">
             <div class="player">
               <h2>Player 1</h2>
@@ -52,8 +54,8 @@
             </div>
             <div class="player-card-slot card-slot" id="card1"></div>
           </div>
+
           
-          <button onclick="play()">Draw Cards</button>
           <div class="text" id="winner">
             <p></p>
           </div>
@@ -97,5 +99,7 @@
         </ul>
       </div>
     </footer>
+
+    <script type="text/javascript" src="warGame.js"></script>
   </body>
 </html>
