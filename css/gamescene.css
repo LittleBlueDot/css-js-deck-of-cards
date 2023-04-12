@@ -228,7 +228,7 @@ h1 {
 .card-slot:after{
   position: absolute;
   z-index: 2;
-  content: "Here your card will be";
+  content: "Your card will be here";
   font-size: 1.2rem;
   font-weight: 800;
   color: #fff;
