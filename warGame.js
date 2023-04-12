@@ -7,7 +7,9 @@ let player1Card = [];
 let player2Card = [];
 
 function startGame() {
-  //<button onclick="startGame()">NEW GAME</button>
+  document.querySelector(".game-scene").style.display = "flex"; // LBA added to show game scene
+  gameHeader.classList.toggle("fade"); // LBA
+  document.querySelector(".start-game").style.display = "none"; // LBA
   createDeck();
   shuffleDeck();
   splitDecks();

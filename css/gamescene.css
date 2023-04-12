@@ -1,3 +1,52 @@
+
+#gameHeader {
+  opacity: 1;
+  height: 100vh;
+  background: #000;
+}
+
+#gameHeader.fade {
+  animation: removeHeight 2s ease-in-out 1;
+  height: 0vh;
+  background: transparent;
+}
+
+@keyframes removeHeight {
+  0% {
+    height: 100vh;
+    background: #000;
+  }
+
+  100% {
+    height: 0px;
+    background: transparent;
+  }
+}
+
+#gameHeader.fade .title-wrap {
+  animation: fadeOut 1.5s ease-in-out 1;
+  opacity: 0;
+  height: 0px;
+}
+
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-scene {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,10 +54,56 @@
   flex-direction: column;
   align-content: center;
   align-items: center;
+  display: none;
+}
+
+h1 {
+  color: rgba(225, 225, 225, 0.01);
+  margin: 0;
+  font-size: 10rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  background-image: url("../img/title-background.jpg");
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  animation: animate 10s ease-in-out 1;
+}
+
+@keyframes animate {
+  0%{
+    background-position: left top;
+  }
+  25% {
+    background-position: right bottom;
+  }
+  50% {
+    background-position: left bottom;
+  }
+  75% {
+    background-position: right top;
+  }
+  100% {
+    background-position: left top;
+  }
+}
+
+.start-game {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.start-game button {
+  text-transform: uppercase;
 }
 
 .btn-container {
   margin-bottom: 30px;
+}
+
+.play {
+  margin-bottom: 50px;
 }
 
 .btn-container button {
@@ -20,12 +115,14 @@
   padding: 7px 15px;
   border-radius: 5px;
   transition: 0.3s;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-container button:hover,
 .btn-container button:focus {
-  background-color: #66806d;
-  border: 1px solid #576e5d;
+  background-color: #0b4b73;
+  border: 1px solid #083551;
 }
 
 .players-container {

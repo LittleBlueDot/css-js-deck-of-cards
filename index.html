@@ -29,15 +29,18 @@
   </head>
 
   <body>
-    <header class="container-fluid">
-      <h1>--- Welcome to the battle! ---</h1>
+    <header class="header container-fluid" id="gameHeader">
+      <div class="title-wrap">
+      <h1>Welcome to the battle!</h1>
+      <div class="btn-container start-game"><button onclick="startGame()">Start the game!</button></div>
+    </div>
     </header>
 
     <main class="container-fluid">
-        <button onclick="startGame()">NEW GAME</button>
+      
       <div class="game-scene">
         
-        <div class="btn-container"><button onclick="play()">Draw Cards</button></div>
+        <div class="btn-container play"><button onclick="play()">Draw Cards</button></div>
         <div class="players-container">
             
           <div class="one-player">
@@ -78,7 +81,7 @@
     </main>
 
     <footer class="container-fluid">
-      <div class="row">
+<!--       <div class="row">
         <ul>
           <li>©</li>
           <li>
@@ -97,7 +100,7 @@
             >
           </li>
         </ul>
-      </div>
+      </div> -->
     </footer>
 
     <script type="text/javascript" src="warGame.js"></script>
