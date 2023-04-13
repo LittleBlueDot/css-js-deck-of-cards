@@ -105,7 +105,7 @@ function war() {
 }
 
 function endGame() {
-  if (player2Deck.length === 0) {
+  if (player2Deck.length === 25) {
     document.getElementById('winner').innerHTML = 'Game over! Player 1 wins';
     document.querySelector('.play').style.display = 'none';
     document.querySelector('.restart').style.display = 'block';
@@ -119,13 +119,16 @@ function endGame() {
 }
 
 function restartGame() {
-  document.querySelector('.restart').style.display = 'none';
+  document.querySelectorAll('.restart, #gameHeader').forEach(element => {
+    element.style.display = 'none';
+  });
   document.querySelector('.play').style.display = 'block';
   document.querySelectorAll('#winner, #player1Score, #player2Score, #card1, #card2').forEach(element => {
     element.innerHTML = "";
   });
   clearDecks();
   startGame();
+
 }
 
 function clearDecks() {
