@@ -33,12 +33,13 @@ function startGame() {
 function restartGame() {
   document.querySelector('.restart').style.display = 'none'; // LBA
   document.querySelector('.play').style.display = 'block'; // LBA
-  document.querySelector('#winner').innerHTML = ""; // LBA clear the winners
+/*   document.querySelector('#winner').innerHTML = ""; // LBA clear the winners
   document.querySelector('#player1Score').innerHTML = ""; // LBA clear the score
   document.querySelector('#player2Score').innerHTML = ""; // LBA clear the score
-  document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart
+  document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart */
   //TODO: see if you can select multiply things like 
-  //LBA: document.querySelectorAll('.card-slot, #player1Score, #player2Score').innerHTML = "";
+  //LBA:
+document.querySelectorAll('#winner, .card-slot, #player1Score, #player2Score').innerHTML = "";
   createDeck();
   shuffleDeck();
   splitDecks();
@@ -112,11 +113,11 @@ function endGame() {
   p1score();
   p2score();
   if (player2Deck.length === 0) {  // LBA for testing purposes, set to 0 in the end
-    document.getElementById('winner').innerHTML = 'Player 1 wins';
+    document.getElementById('winner').innerHTML = 'Game over! Player 1 wins';
     document.querySelector('.play').style.display = 'none'; // LBA
     document.querySelector('.restart').style.display = 'block'; // LBA
   } else if (player1Deck.length === 25) { // LBA for testing purposes, set to 0 in the end
-    document.getElementById('winner').innerHTML = 'Player 2 wins';
+    document.getElementById('winner').innerHTML = 'Game over! Player 2 wins';
     document.querySelector('.play').style.display = 'none'; // LBA
     document.querySelector('.restart').style.display = 'block'; // LBA
   }
