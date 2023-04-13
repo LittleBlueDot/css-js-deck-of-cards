@@ -1,4 +1,4 @@
-const deck = [];
+let deck = [];
 const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 const values = [
   '2',
@@ -21,27 +21,13 @@ let player1Card = [];
 let player2Card = [];
 
 function startGame() {
-  document.querySelector('.game-scene').style.display = 'flex'; // LBA added to show game scene
-  gameHeader.classList.toggle('fade'); // LBA
-  document.querySelector('.start-game').style.display = 'none'; // LBA
+  document.querySelector('.game-scene').style.display = 'flex';
+  gameHeader.classList.toggle('fade');
+  document.querySelector('.start-game').style.display = 'none';
   createDeck();
   shuffleDeck();
   splitDecks();
-}
-
-// LBA
-function restartGame() {
-  document.querySelector('.restart').style.display = 'none'; // LBA
-  document.querySelector('.play').style.display = 'block'; // LBA
-  document.querySelector('#winner').innerHTML = ""; // LBA clear the winners
-  document.querySelector('#player1Score').innerHTML = ""; // LBA clear the score
-  document.querySelector('#player2Score').innerHTML = ""; // LBA clear the score
-  document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart
-  //TODO: see if you can select multiply things like 
-  //LBA: document.querySelectorAll('#winner, .card-slot, #player1Score, #player2Score').innerHTML = "";
-  createDeck();
-  shuffleDeck();
-  splitDecks();
+  score();
 }
 
 function createDeck() {
@@ -70,12 +56,14 @@ function splitDecks() {
   player2Deck = deck.slice(half);
 }
 
+function score() {
+  document.getElementById('player1Score').innerHTML = player1Deck.length;
+  document.getElementById('player2Score').innerHTML = player2Deck.length;
+}
+
 function play() {
   drawCards();
   result();
-  endGame();
-  player1Card = [];
-  player2Card = [];
 }
 
 function drawCards() {
@@ -87,39 +75,63 @@ function drawCards() {
 
 function result() {
   if (player1Card.at(-1).power === player2Card.at(-1).power) {
-    war();
-  } else
+    document.querySelector('.play').style.display = 'none';
+    document.querySelector('.war').style.display = 'block';
+    return;
+  } else {
     player1Card.at(-1).power > player2Card.at(-1).power
-      ? player1Deck.push(...player2Card) && player1Deck.push(...player1Card)
-      : player2Deck.push(...player1Card) && player2Deck.push(...player2Card);
+      ? player1Deck.push(...player2Card, ...player1Card)
+      : player2Deck.push(...player1Card, ...player2Card);
+    player1Card = [];
+    player2Card = [];
+  }
+  score();
+  endGame();
 }
 
 function war() {
-  // Pausar para se clicar novamente em "Draw Cards"
-  document.getElementById('winner').innerHTML = 'It´s a war, nobody wins this round! Draw cards again!'; // LBA
   for (let i = 0; i < 4; i++) {
-    if (player1Deck.length === 0 || player1Deck.length === 0) {
+    if (!endGame()) {
+      drawCards();
+    } else {
+      document.querySelector('.war').style.display = 'none';
+      document.querySelector('.restart').style.display = 'block';
       return;
     }
-    drawCards();
-   
   }
+  document.querySelector('.war').style.display = 'none';
+  document.querySelector('.play').style.display = 'block';
   result();
-  document.getElementById('winner').innerHTML = ""; // LBA clear content text
 }
 
 function endGame() {
-  p1score();
-  p2score();
-  if (player2Deck.length === 0) {  // LBA for testing purposes, set to 0 in the end
+  if (player2Deck.length === 20) {
     document.getElementById('winner').innerHTML = 'Game over! Player 1 wins';
-    document.querySelector('.play').style.display = 'none'; // LBA
-    document.querySelector('.restart').style.display = 'block'; // LBA
-  } else if (player1Deck.length === 25) { // LBA for testing purposes, set to 0 in the end
+    document.querySelector('.play').style.display = 'none';
+    document.querySelector('.restart').style.display = 'block';
+    return true;
+  } else if (player1Deck.length === 20) {
     document.getElementById('winner').innerHTML = 'Game over! Player 2 wins';
-    document.querySelector('.play').style.display = 'none'; // LBA
-    document.querySelector('.restart').style.display = 'block'; // LBA
-  }
+    document.querySelector('.play').style.display = 'none';
+    document.querySelector('.restart').style.display = 'block';
+    return true;
+  } else return false;
+}
+
+function restartGame() {
+  document.querySelector('.restart').style.display = 'none';
+  document.querySelector('.play').style.display = 'block';
+  document.querySelectorAll('#winner, #player1Score, #player2Score, #card1, #card2').forEach(element => {
+    element.innerHTML = "";
+  });
+  clearDecks();
+  startGame();
+}
+
+function clearDecks() {
+  deck = [];
+  player1Deck = [];
+  player2Deck = [];
 }
 
 const images = {
@@ -211,14 +223,4 @@ function renderCard(card) {
         </div>
     </div>
   `);
-}
-
-function p1score() {
-  return (document.getElementById('player1Score').innerHTML =
-    player1Deck.length);
-}
-
-function p2score() {
-  return (document.getElementById('player2Score').innerHTML =
-    player2Deck.length);
 }
