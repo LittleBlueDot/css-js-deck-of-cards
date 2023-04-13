@@ -1,4 +1,4 @@
-const deck = [];
+let deck = [];
 const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 const values = [
   '2',
@@ -21,27 +21,13 @@ let player1Card = [];
 let player2Card = [];
 
 function startGame() {
-  document.querySelector('.game-scene').style.display = 'flex'; // LBA added to show game scene
-  gameHeader.classList.toggle('fade'); // LBA
-  document.querySelector('.start-game').style.display = 'none'; // LBA
-  document.querySelector('.restart').style.display = 'none'; // LBA
-
-  //TODO: see if possible to combine multiple classes, the code bellow doesn´t work
-  /*   const hideButtons = document.querySelectorAll(".start-game, .restart");
-  hideButtons.style.display = "none"; */
+  document.querySelector('.game-scene').style.display = 'flex';
+  gameHeader.classList.toggle('fade');
+  document.querySelector('.start-game').style.display = 'none';
   createDeck();
   shuffleDeck();
   splitDecks();
-}
-
-// LBA
-function restartGame() {
-  document.querySelector('.restart').style.display = 'none'; // LBA
-  document.querySelector('.play').style.display = 'block'; // LBA
-  document.querySelector('.text').style.display = 'none'; // LBA
-  createDeck();
-  shuffleDeck();
-  splitDecks();
+  score();
 }
 
 function createDeck() {
@@ -70,12 +56,14 @@ function splitDecks() {
   player2Deck = deck.slice(half);
 }
 
+function score() {
+  document.getElementById('player1Score').innerHTML = player1Deck.length;
+  document.getElementById('player2Score').innerHTML = player2Deck.length;
+}
+
 function play() {
   drawCards();
   result();
-  endGame();
-  player1Card = [];
-  player2Card = [];
 }
 
 function drawCards() {
@@ -87,36 +75,63 @@ function drawCards() {
 
 function result() {
   if (player1Card.at(-1).power === player2Card.at(-1).power) {
-    war();
-  } else
+    document.querySelector('.play').style.display = 'none';
+    document.querySelector('.war').style.display = 'block';
+    return;
+  } else {
     player1Card.at(-1).power > player2Card.at(-1).power
-      ? player1Deck.push(...player2Card) && player1Deck.push(...player1Card)
-      : player2Deck.push(...player1Card) && player2Deck.push(...player2Card);
+      ? player1Deck.push(...player2Card, ...player1Card)
+      : player2Deck.push(...player1Card, ...player2Card);
+    player1Card = [];
+    player2Card = [];
+  }
+  score();
+  endGame();
 }
 
 function war() {
-  // Pausar para se clicar novamente em "Draw Cards"
   for (let i = 0; i < 4; i++) {
-    if (player1Deck.length === 0 || player1Deck.length === 0) {
+    if (!endGame()) {
+      drawCards();
+    } else {
+      document.querySelector('.war').style.display = 'none';
+      document.querySelector('.restart').style.display = 'block';
       return;
     }
-    drawCards();
   }
+  document.querySelector('.war').style.display = 'none';
+  document.querySelector('.play').style.display = 'block';
   result();
 }
 
 function endGame() {
-  p1score();
-  p2score();
   if (player2Deck.length === 0) {
-    document.getElementById('winner').innerHTML = 'Player 1 wins';
-    document.querySelector('.play').style.display = 'none'; // LBA
-    document.querySelector('.restart').style.display = 'block'; // LBA
+    document.getElementById('winner').innerHTML = 'Game over! Player 1 wins';
+    document.querySelector('.play').style.display = 'none';
+    document.querySelector('.restart').style.display = 'block';
+    return true;
   } else if (player1Deck.length === 0) {
-    document.getElementById('winner').innerHTML = 'Player 2 wins';
-    document.querySelector('.play').style.display = 'none'; // LBA
-    document.querySelector('.restart').style.display = 'block'; // LBA
-  }
+    document.getElementById('winner').innerHTML = 'Game over! Player 2 wins';
+    document.querySelector('.play').style.display = 'none';
+    document.querySelector('.restart').style.display = 'block';
+    return true;
+  } else return false;
+}
+
+function restartGame() {
+  document.querySelector('.restart').style.display = 'none';
+  document.querySelector('.play').style.display = 'block';
+  document.querySelectorAll('#winner, #player1Score, #player2Score, #card1, #card2').forEach(element => {
+    element.innerHTML = "";
+  });
+  clearDecks();
+  startGame();
+}
+
+function clearDecks() {
+  deck = [];
+  player1Deck = [];
+  player2Deck = [];
 }
 
 const images = {
@@ -208,14 +223,4 @@ function renderCard(card) {
         </div>
     </div>
   `);
-}
-
-function p1score() {
-  return (document.getElementById('player1Score').innerHTML =
-    player1Deck.length);
-}
-
-function p2score() {
-  return (document.getElementById('player2Score').innerHTML =
-    player2Deck.length);
 }
