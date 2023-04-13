@@ -24,10 +24,6 @@ function startGame() {
   document.querySelector('.game-scene').style.display = 'flex'; // LBA added to show game scene
   gameHeader.classList.toggle('fade'); // LBA
   document.querySelector('.start-game').style.display = 'none'; // LBA
-  document.querySelector('.restart').style.display = 'none'; // LBA
-  //TODO: see if possible to combine multiple classes, the code bellow doesn´t work
-  /*   const hideButtons = document.querySelectorAll(".start-game, .restart");
-  hideButtons.style.display = "none"; */
   createDeck();
   shuffleDeck();
   splitDecks();
@@ -37,9 +33,12 @@ function startGame() {
 function restartGame() {
   document.querySelector('.restart').style.display = 'none'; // LBA
   document.querySelector('.play').style.display = 'block'; // LBA
-  //document.querySelector('.text').style.display = 'none'; // LBA
-  document.querySelector('.text').innerHTML = ""; // LBA
-  //? document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart
+  document.querySelector('#winner').innerHTML = ""; // LBA clear the winners
+  document.querySelector('#player1Score').innerHTML = ""; // LBA clear the score
+  document.querySelector('#player2Score').innerHTML = ""; // LBA clear the score
+  document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart
+  //TODO: see if you can select multiply things like 
+  //LBA: document.querySelectorAll('.card-slot, #player1Score, #player2Score').innerHTML = "";
   createDeck();
   shuffleDeck();
   splitDecks();
@@ -103,19 +102,20 @@ function war() {
       return;
     }
     drawCards();
-    document.getElementById('winner').innerHTML = ""; // LBA clear content text
+   
   }
   result();
+  document.getElementById('winner').innerHTML = ""; // LBA clear content text
 }
 
 function endGame() {
   p1score();
   p2score();
-  if (player2Deck.length === 0) {
+  if (player2Deck.length === 0) {  // LBA for testing purposes, set to 0 in the end
     document.getElementById('winner').innerHTML = 'Player 1 wins';
     document.querySelector('.play').style.display = 'none'; // LBA
     document.querySelector('.restart').style.display = 'block'; // LBA
-  } else if (player1Deck.length === 0) {
+  } else if (player1Deck.length === 25) { // LBA for testing purposes, set to 0 in the end
     document.getElementById('winner').innerHTML = 'Player 2 wins';
     document.querySelector('.play').style.display = 'none'; // LBA
     document.querySelector('.restart').style.display = 'block'; // LBA
