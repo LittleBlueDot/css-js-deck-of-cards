@@ -25,7 +25,6 @@ function startGame() {
   gameHeader.classList.toggle('fade'); // LBA
   document.querySelector('.start-game').style.display = 'none'; // LBA
   document.querySelector('.restart').style.display = 'none'; // LBA
-
   //TODO: see if possible to combine multiple classes, the code bellow doesn´t work
   /*   const hideButtons = document.querySelectorAll(".start-game, .restart");
   hideButtons.style.display = "none"; */
@@ -38,7 +37,9 @@ function startGame() {
 function restartGame() {
   document.querySelector('.restart').style.display = 'none'; // LBA
   document.querySelector('.play').style.display = 'block'; // LBA
-  document.querySelector('.text').style.display = 'none'; // LBA
+  //document.querySelector('.text').style.display = 'none'; // LBA
+  document.querySelector('.text').innerHTML = ""; // LBA
+  //? document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart
   createDeck();
   shuffleDeck();
   splitDecks();
@@ -96,11 +97,13 @@ function result() {
 
 function war() {
   // Pausar para se clicar novamente em "Draw Cards"
+  document.getElementById('winner').innerHTML = 'It´s a war, nobody wins this round! Draw cards again!'; // LBA
   for (let i = 0; i < 4; i++) {
     if (player1Deck.length === 0 || player1Deck.length === 0) {
       return;
     }
     drawCards();
+    document.getElementById('winner').innerHTML = ""; // LBA clear content text
   }
   result();
 }
