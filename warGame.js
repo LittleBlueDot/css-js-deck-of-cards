@@ -105,12 +105,12 @@ function war() {
 }
 
 function endGame() {
-  if (player2Deck.length === 20) {
+  if (player2Deck.length === 0) {
     document.getElementById('winner').innerHTML = 'Game over! Player 1 wins';
     document.querySelector('.play').style.display = 'none';
     document.querySelector('.restart').style.display = 'block';
     return true;
-  } else if (player1Deck.length === 20) {
+  } else if (player1Deck.length === 0) {
     document.getElementById('winner').innerHTML = 'Game over! Player 2 wins';
     document.querySelector('.play').style.display = 'none';
     document.querySelector('.restart').style.display = 'block';
