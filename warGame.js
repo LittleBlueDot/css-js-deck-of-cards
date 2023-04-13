@@ -33,13 +33,12 @@ function startGame() {
 function restartGame() {
   document.querySelector('.restart').style.display = 'none'; // LBA
   document.querySelector('.play').style.display = 'block'; // LBA
-/*   document.querySelector('#winner').innerHTML = ""; // LBA clear the winners
+  document.querySelector('#winner').innerHTML = ""; // LBA clear the winners
   document.querySelector('#player1Score').innerHTML = ""; // LBA clear the score
   document.querySelector('#player2Score').innerHTML = ""; // LBA clear the score
-  document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart */
+  document.querySelector('.card-slot').innerHTML = ""; // LBA clear the card deck on restart
   //TODO: see if you can select multiply things like 
-  //LBA:
-document.querySelectorAll('#winner, .card-slot, #player1Score, #player2Score').innerHTML = "";
+  //LBA: document.querySelectorAll('#winner, .card-slot, #player1Score, #player2Score').innerHTML = "";
   createDeck();
   shuffleDeck();
   splitDecks();
